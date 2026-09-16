@@ -1,0 +1,15 @@
+{
+  "total_sales": 3493253.8200000008,
+  "total_units": 891567.0,
+  "forecast_accuracy": 0.76889410981664,
+  "baseline_accuracy": 0.6759081071206575,
+  "improvement_vs_baseline": 0.09298600269598245,
+  "wmape": 0.23110589018336014,
+  "inventory_turns": 16.331533235104718,
+  "stockout_risk_pct": 0.075,
+  "excess_inventory_value": 64558.07983276073,
+  "a_class_sku_pct": 0.5916666666666667,
+  "recommended_orders": 9,
+  "sku_store_count": 120,
+  "as_of": "2024-12-30"
+}

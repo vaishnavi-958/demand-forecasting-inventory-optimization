@@ -1,0 +1,67 @@
+{
+  "baseline_accuracy": 0.6759081071206575,
+  "best_model_accuracy": 0.76889410981664,
+  "improvement_vs_baseline": 0.09298600269598245,
+  "best_model_by_mean_wmape": "ARIMA",
+  "model_comparison": [
+    {
+      "model": "ARIMA",
+      "WMAPE": 0.18163454002413032,
+      "Forecast_Accuracy": 0.8183654599758697,
+      "MAE": 5.302882904871804,
+      "RMSE": 6.9163400481545825
+    },
+    {
+      "model": "HoltWinters",
+      "WMAPE": 0.19852589558043385,
+      "Forecast_Accuracy": 0.8014741044195661,
+      "MAE": 4.428724797330183,
+      "RMSE": 5.795737930028338
+    },
+    {
+      "model": "MovingAverage_28",
+      "WMAPE": 0.2380816283401341,
+      "Forecast_Accuracy": 0.761918371659866,
+      "MAE": 3.833014455782313,
+      "RMSE": 4.908825951403925
+    },
+    {
+      "model": "MovingAverage_14",
+      "WMAPE": 0.23835651822078985,
+      "Forecast_Accuracy": 0.7616434817792102,
+      "MAE": 3.8510841836734695,
+      "RMSE": 4.9666618735492545
+    },
+    {
+      "model": "MovingAverage_7",
+      "WMAPE": 0.24489831456326494,
+      "Forecast_Accuracy": 0.7551016854367351,
+      "MAE": 3.913265306122449,
+      "RMSE": 4.940313397366846
+    },
+    {
+      "model": "Naive",
+      "WMAPE": 0.32409189287934237,
+      "Forecast_Accuracy": 0.6759081071206577,
+      "MAE": 5.035714285714286,
+      "RMSE": 6.122558672818953
+    }
+  ],
+  "lowest_accuracy_department": "HOUSEHOLD_1",
+  "lowest_department_accuracy": 0.6480438005329766,
+  "stockout_risk_counts": {
+    "LOW": 107,
+    "HIGH": 6,
+    "MEDIUM": 4,
+    "CRITICAL": 3
+  },
+  "excess_inventory_value": 64558.07983276073,
+  "a_class_share": 0.5916666666666667,
+  "highest_risk_store": "CA_1",
+  "demand_segment_counts": {
+    "high_volume_low_volatility": 60,
+    "low_volume_high_volatility": 60
+  },
+  "series_evaluated": 48,
+  "disclaimer": "Accuracy and inventory exposure figures are computed from this run. Lead time, cost, and on-hand inventory are scenario parameters."
+}

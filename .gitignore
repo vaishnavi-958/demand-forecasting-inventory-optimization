@@ -1,0 +1,67 @@
+# Secrets and local env
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+*.log
+
+# Data — never commit M5 or generated extracts
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+data/external/*
+!data/external/.gitkeep
+*.parquet
+*.feather
+*.h5
+*.db
+*.sqlite
+*.sqlite3
+
+# Keep tiny committed dashboard extracts only if under web/public
+!web/public/data/
+!web/public/data/**
+
+# Notebooks / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Download bundle (built locally; not source of truth)
+demand-forecasting-inventory-optimization.zip
+
+# Node
+node_modules/
+web/.next/
+web/out/
+npm-debug.log*
+.turbo/
+
+# Power BI local artifacts
+*.pbix
+*.pbit
+dashboard/screenshots/*.png
+!dashboard/screenshots/.gitkeep

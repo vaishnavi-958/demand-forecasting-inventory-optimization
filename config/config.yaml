@@ -1,0 +1,76 @@
+project:
+  name: Demand Forecasting & Inventory Optimization Platform
+  positioning: Independent Supply Chain Analytics Project using the public M5 Forecasting dataset.
+  disclaimer: >
+    This repository is an independent portfolio project. It is not affiliated with
+    Walmart, AdventHealth, Capgemini, SAP, or any other employer. Lead times, unit
+    costs, ordering costs, holding costs, and on-hand inventory are analytical
+    scenario parameters, not actual retailer financial or operational data.
+
+paths:
+  data_dir: data/raw
+  processed_dir: data/processed
+  external_dir: data/external
+  dashboard_dir: web/public/data
+  calendar_file: calendar.csv
+  sales_file: sales_train_validation.csv
+  prices_file: sell_prices.csv
+
+database:
+  # sqlite is the out-of-the-box default. Point DATABASE_URL at PostgreSQL for production-style loading.
+  url: sqlite:///data/processed/supply_chain.db
+  schema: supply_chain
+  chunksize: 50000
+
+sample:
+  enabled: true
+  generate_if_missing: true
+  seed: 42
+  n_days: 730
+  start_date: "2023-01-01"
+
+forecasting:
+  horizon_days: 28
+  validation_days: 28
+  min_history_days: 90
+  max_forecast_skus: 48
+  expensive_model_skus: 16
+  prophet_skus: 8
+  rolling_origin_folds: 3
+  random_seed: 42
+
+inventory:
+  service_level: 0.95
+  default_lead_time_days: 7
+  lead_time_is_assumption: true
+  ordering_cost: 75.0
+  holding_cost_rate: 0.25
+  target_days_supply: 21
+  excess_days_supply_threshold: 45
+  near_rop_tolerance: 0.15
+  # On-hand inventory is simulated for scenario analysis. M5 has no inventory snapshot.
+  inventory_simulation_seed: 42
+
+abc:
+  a_cutoff: 0.80
+  b_cutoff: 0.95
+
+stockout:
+  critical_dos_vs_lead_time: 1.0
+  high_below_rop: true
+  medium_near_rop_pct: 0.15
+
+lead_time_by_department:
+  FOODS_1: 5
+  FOODS_2: 6
+  FOODS_3: 7
+  HOUSEHOLD_1: 10
+  HOUSEHOLD_2: 12
+  HOBBIES_1: 14
+  HOBBIES_2: 18
+
+service_level_z:
+  0.90: 1.2815515655446004
+  0.95: 1.6448536269514722
+  0.975: 1.959963984540054
+  0.99: 2.3263478740408408

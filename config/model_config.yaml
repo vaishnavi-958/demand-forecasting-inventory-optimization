@@ -1,0 +1,36 @@
+naive:
+  enabled: true
+  apply_to: all
+
+moving_average:
+  enabled: true
+  windows: [7, 14, 28]
+  apply_to: all
+
+holt_winters:
+  enabled: true
+  trend: add
+  seasonal: add
+  seasonal_periods: 7
+  apply_to: selected
+  damped_trend: false
+
+arima:
+  enabled: true
+  order: [1, 1, 1]
+  seasonal_order: [1, 0, 1, 7]
+  apply_to: expensive
+  maxiter: 50
+
+prophet:
+  enabled: true
+  weekly_seasonality: true
+  yearly_seasonality: auto
+  daily_seasonality: false
+  apply_to: prophet
+  interval_width: 0.95
+
+selection:
+  primary_metric: wmape
+  tie_breaker: rmse
+  require_min_positive_actuals: 5
